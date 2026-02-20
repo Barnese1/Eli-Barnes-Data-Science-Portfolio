@@ -118,5 +118,47 @@
     "crumbs": [
       "Final Project"
     ]
+  },
+  {
+    "objectID": "projects/tutorial_blog.html",
+    "href": "projects/tutorial_blog.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "projects/tutorial_blog.html#python-library-tutorial-blog",
+    "href": "projects/tutorial_blog.html#python-library-tutorial-blog",
+    "title": "",
+    "section": "Python Library Tutorial Blog",
+    "text": "Python Library Tutorial Blog"
+  },
+  {
+    "objectID": "projects/tutorial_blog.html#what-is-a-heat-map",
+    "href": "projects/tutorial_blog.html#what-is-a-heat-map",
+    "title": "",
+    "section": "What is a heat map?",
+    "text": "What is a heat map?\nImagine we have two variables in a dataset. To give an example, we can look at a dataset commonly used for data analysis practice, the Palmer Penguins dataset from Seaborn in Python. In this example, we might be interested in the relationship between a penguin’s different body measurements. We can plot different scatterplots of the data as linear relationships, but there is a wide distribution of values for the variables we want to use. What if we want to view the density of the data, rather than the linear relationship? A heat map can help us view it. A heat map is a graphic that uses a color scale to show the density of data. We will look at how heat maps look in python and the coding options we have when making them."
+  },
+  {
+    "objectID": "projects/tutorial_blog.html#the-data",
+    "href": "projects/tutorial_blog.html#the-data",
+    "title": "",
+    "section": "The Data",
+    "text": "The Data\nimport seaborn as sns\ndf = sns.load_dataset('penguins').dropna()\ndf.head()\nThis is the list of libraries we will be using, as well as code to load in the dataset. I chose to drop all missing values in this case. For this and all code, it may be copied for your own use.\nThere are a list of values that we might be interested in, such as the relationship between a penguin’s bill length and its body mass. The code make a heat map for the density between the two is below.\nsns.histplot(\n    data=df,\n    x=\"bill_length_mm\",\n    y=\"flipper_length_mm\",\n    bins=12,\n    cmap=\"viridis\",\n    cbar=True  \n)\n\n\n\nHeatmap of Bill Length vs Flipper Length\n\n\nLet’s break it down step by step. The histplot() function from seaborn is going to tally up the values from the variables bill_length_mm and flipper_length_mm.\nThen, it is going to place them in bins, grouping by every 10 mm.\nFinally, we chose the color pallette viridis, and added cbar, which displays the color key.\n\nFirst Analysis\nIn our first heat map of the penguin dataset, we can see not only the linear relationship between flipper length and bill length, but also the density of the data. It seems that many penguins had a flipper length of around 190mm with a bill length of around 35-40mm, while it was much more rare to have a penguin with a flipper length of 230mm and bill length of 55mm, even though it seems to be on the line of best fit. This is the benefit of a heat map- seeing aspects of the data that simple linear models struggle to display.\nAs great as that is, it feels sloppy in a way. The penguin dataset especially points out flaws in the code we chose, as there are not too many observations and we needed to make the bin size rather small in order to get it to look nice. A better way of doing this, so that we get a smoother feeling graph, is a kdeplot()."
+  },
+  {
+    "objectID": "projects/tutorial_code.html",
+    "href": "projects/tutorial_code.html",
+    "title": "",
+    "section": "",
+    "text": "CodeShow All CodeHide All Code\n\n\n\n\n\n\nCode\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ndf = sns.load_dataset('penguins').dropna()\ndf.head()\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nMale\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nFemale\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nFemale\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nFemale\n\n\n5\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nMale\n\n\n\n\n\n\n\n\n\nCode\nsns.histplot(\n    data=df,\n    x=\"bill_length_mm\",\n    y=\"flipper_length_mm\",\n    bins=12,\n    cmap=\"viridis\",\n    cbar=True  \n)\nplt.savefig(\"hist_heatmap.png\", dpi=300, bbox_inches=\"tight\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCode\nsns.kdeplot(\n    data=df,\n    x=\"bill_length_mm\",\n    y=\"flipper_length_mm\",\n    fill=True,          # Fills the contours\n    cmap=\"viridis\",     # Color map\n    thresh=0.05,        # Removes very low-density noise\n    levels=100          # Smoothness/detail level\n)\nplt.savefig(\"kde_heatmap.png\", dpi=300, bbox_inches=\"tight\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nCode\nimport os\nprint(os.getcwd())\n\n\nc:\\Users\\alden\\Documents\\stat386\\Eli-Barnes-Data-Science-Portfolio\\projects"
+  },
+  {
+    "objectID": "projects/tutorial_blog.html#kdeplot",
+    "href": "projects/tutorial_blog.html#kdeplot",
+    "title": "",
+    "section": "kdeplot()",
+    "text": "kdeplot()\nHere is an example of how to use the kdeplot() instead of the histplot.\nsns.kdeplot(\n    data=df,\n    x=\"bill_length_mm\",\n    y=\"flipper_length_mm\",\n    fill=True,         \n    cmap=\"viridis\",     \n    thresh=0.05,        \n    levels=100          \n)\n\n\n\nSmoothed KDE Heatmap\n\n\nLook at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The thresh parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. levels is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density."
   }
 ]
