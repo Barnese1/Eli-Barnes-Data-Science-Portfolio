@@ -38,4 +38,4 @@ My name is Elijah Barnes. I am an undergraduate student at Brigham Young Univers
 - Personal Interests: I enjoy learning about the world around me from a mathematical and statistical perspective. I enjoy music and learning different instruments. I am always trying to cook for myself my favorite foods from restauraunts I like. I enjoy fitness and excercise, but I also have an extraordinary sweet tooth. 
 - Fun Facts: I have never tried the Costco hot dog. Every time I go I always get the pizza instead. The one time I was on a basketall team in my life, the only time I scored was on our own net. I have a small pet dog named Ruby back home in Boston.
 
-![](about_me_files/Headshot.jpg){width=100px}
+![](docs/Eli_Headshot.jpg){width=100px}
