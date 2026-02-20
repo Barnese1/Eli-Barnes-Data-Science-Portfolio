@@ -12,7 +12,7 @@ website:
       - text: "Home"
         href: index.md
       - text: "About Me"
-        href: about_me/about_me.qmd
+        href: about.md
       - text: "Projects"
         menu:
           - text: "All Projects"
