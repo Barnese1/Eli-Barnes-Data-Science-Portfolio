@@ -133,6 +133,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../projects/tutorial_blog.html" aria-current="page"> 
+<span class="menu-text">Heat Map Tutorial</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Projects</span>
@@ -225,12 +229,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"viridis"</span>,</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    cbar<span class="op">=</span><span class="va">True</span>  </span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="docs/hist_heatmap.png" class="img-fluid figure-img"></p>
-<figcaption>Heatmap of Bill Length vs Flipper Length</figcaption>
-</figure>
-</div>
 <p>Let’s break it down step by step. The <code>histplot()</code> function from seaborn is going to tally up the values from the variables <code>bill_length_mm</code> and <code>flipper_length_mm</code>.</p>
 <p>Then, it is going to place them in <code>bins</code>, grouping by every 10 mm.</p>
 <p>Finally, we chose the color pallette viridis, and added <code>cbar</code>, which displays the color key.</p>
@@ -252,12 +250,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    thresh<span class="op">=</span><span class="fl">0.05</span>,        </span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    levels<span class="op">=</span><span class="dv">100</span>          </span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="docs/kde_heatmap.png" class="img-fluid figure-img"></p>
-<figcaption>Smoothed KDE Heatmap</figcaption>
-</figure>
-</div>
 <p>Look at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The <code>thresh</code> parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. <code>levels</code> is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density.</p>
 
 
