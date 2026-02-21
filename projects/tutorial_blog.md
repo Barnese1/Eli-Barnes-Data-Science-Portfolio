@@ -26,7 +26,7 @@ sns.histplot(
     cbar=True  
 )
 ```
-![](docs/hist_heatmap.png)
+![](hist_heatmap.png)
 
 Let's break it down step by step. The `histplot()` function from seaborn is going to tally up the values from the variables `bill_length_mm` and `flipper_length_mm`. 
 
