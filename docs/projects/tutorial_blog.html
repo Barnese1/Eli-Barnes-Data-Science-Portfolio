@@ -198,6 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#kdeplot" id="toc-kdeplot" class="nav-link" data-scroll-target="#kdeplot"><code>kdeplot()</code></a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -253,11 +254,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="../kde_heatmap.png" class="img-fluid"></p>
 <p>Look at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The <code>thresh</code> parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. <code>levels</code> is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Heat maps are a great way to visualize your data. They can show you densities that may have been harder to view with simpler statistical graphics. I encourage you to try this code out for yourself the next time you encounter two related variables.</p>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -768,7 +773,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](../kde_heatmap.png)</span></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>Look at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The <span class="in">`thresh`</span> parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. <span class="in">`levels`</span> is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>Look at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The <span class="in">`thresh`</span> parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. <span class="in">`levels`</span> is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density. </span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>Heat maps are a great way to visualize your data. They can show you densities that may have been harder to view with simpler statistical graphics. I encourage you to try this code out for yourself the next time you encounter two related variables.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

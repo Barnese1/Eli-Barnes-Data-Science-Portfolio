@@ -55,3 +55,7 @@ sns.kdeplot(
 ![](../kde_heatmap.png)
 
 Look at how much smoother the graph has become! The new plot uses many of the previous parameters, but also introduces some new ones. The `thresh` parameter is essentially what threshold of data do we allow to influence our smoothed graph. Do we listen to those rare cases or do we just rely on the most common penguin measurements? A high threshold will exclude more of the less common data points. `levels` is the number of slices we make as we compile the density plot. Think of our plot like a topography map, where a steep mountain has lots of lines densely together. Choosing a high level makes the color breaks indistiguishable, whereas a low level will allow rings of discrete colors to show density. 
+
+# Conclusion
+Heat maps are a great way to visualize your data. They can show you densities that may have been harder to view with simpler statistical graphics. I encourage you to try this code out for yourself the next time you encounter two related variables.
+
