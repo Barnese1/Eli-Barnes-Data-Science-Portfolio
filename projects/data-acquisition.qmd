@@ -8,6 +8,42 @@ format:
     toc: true
 ---
 
-# Data Acquisition Project
-## Introduction
+# Introduction
+In the video game industry, certain aspects of a game make it very popular. In this project, I hoped to gather data that could be used in future analysis to determine factors of what makes a game popular. As well as this, I thought it would be interesting to see if there is a difference in the rating your at-home gamer would give a game compared to the rating a critic would give a game.
+
+# Data Collection
+In order to gather data for this project, I used Metacritic, a website that aggregates reviews of media products, including video games. I collected data on the top rated games of all time according to Metacritic's rankings. For each game, I recorded the following information: The name of the game, the critics score, the user score, the year of release and the rating of the game (E for Everyone, T for Teen, M for Mature, etc.). 
+
+# Questions to Explore
+The data I collected can be used to explore several questions.
+
+### 1. Is there a difference between what makes a game popular to critics and what makes a game popular to users?
+Games that come out these days seem impossible to predict whether they will become popular or not. Sometimes a game with extraordinary graphics and a large budget will gain laurels from critics but fail to connect with users, making the game an overall failure. On the other hand, some games made by indie developers with no large studio backing them seem to find the favor of users while critics may miss what makes the game special. With our minimal data, we can analyze basic trends that tell us in what games the divide between critics and users is the largest.
+
+### 2. Have games gotten better over time?
+As you look at the highest rated games of all time, it may surprise you which ones take the top spots. You might think that with new game engines and years of experience, the games that come out now would be rated higher than the old ones on dated consoles. However, this is not always the case. With the data I have collected, it would be easy to analyze what the date of release has to do with the critics and users scores.
+
+### 3. Do certain ratings (E for Everyone, T for Teen, M for Mature, etc.) correlate with higher scores?
+It is interesting to see if there is a correlation between the rating of a game and its score. Do games that are rated E for Everyone tend to have higher scores than games that are rated M for Mature? Or do games that are rated T for Teen have the highest scores? By looking at scores across the different ratings, we can see if there is a trend in what types of games are rated higher by critics and users.
+
+# Data Collection Ethics
+When collecting data for this project, I ensured that I was following ethical guidelines for data collection and usage, as listed in the robots.txt file. I only used publicly available data from Metacritic and did not collect any personal information from users. 
+
+# Data Collection and Description
+The dataset I collected, as ouputted in the file metacritic_games.csv, contains the following columns: 
+- name: The game's name
+- metascore: The score given to the game by critics
+- user_score: The score given to the game by users
+- release_date: The year the game was released
+- rating: The rating of the game (E for Everyone, T for Teen, M for Mature, etc.)
+
+There are 249 rows in the dataset. This is not the entirety of the listed top rated games on metacritic, but it is a good sample size to work with for this project.
+Some of the data is missing, but as so little was missing I decided to list all missing data as "NA" and keep the rows in the dataset.
+
+To gather the data, I used the BeautifulSoup library in Python to scrape the page. I entered each individual game's page link in order to gather the afforementioned data. I then compiled the data into a a dataframe, and then a csv file for future analysis.
+
+# Code and Dataset
+[Metacritic Game Scraping Repository](https://github.com/Barnese1/Metacritic-Scraping)
+
+The code I used is found in Metacritic.ipynb. Metacritic_games.csv is the dataset I collected.
 
